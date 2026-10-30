@@ -1,4 +1,4 @@
-# Minimum-Cost Fire Alarm Network Using Prim's Algorithm
+
 
 ## 1. About the Project
 
