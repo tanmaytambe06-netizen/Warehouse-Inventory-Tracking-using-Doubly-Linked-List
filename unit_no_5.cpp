@@ -6,8 +6,7 @@ using namespace std;
 
 int main()
 {
-    // Adjacency matrix representing installation costs (in thousand rupees).
-    // 0 means there is no direct connection between two buildings.
+    
     int graph[V][V] = {
         {0, 4, 3, 7, 0, 0},
         {4, 0, 2, 5, 6, 0},
@@ -19,24 +18,24 @@ int main()
 
     const char buildings[V] = {'A', 'B', 'C', 'D', 'E', 'F'};
 
-    int parent[V];             // Stores the MST parent of each vertex.
-    int key[V];                // Minimum known cost to connect each vertex.
-    bool visited[V] = {false}; // True if the vertex is already in the MST.
+    int parent[V];             
+    int key[V];               
+    bool visited[V] = {false}; 
 
-    // Initialize all key values to infinity.
+    
     for (int i = 0; i < V; i++)
     {
         key[i] = INF;
     }
 
-    // Start Prim's algorithm from building A (vertex 0).
+   
     key[0] = 0;
     parent[0] = -1;
 
-    // An MST with V vertices contains exactly V - 1 edges.
+
     for (int count = 0; count < V - 1; count++)
     {
-        // Find the unvisited vertex with the smallest key value.
+        
         int minKey = INF;
         int u = -1;
 
@@ -49,10 +48,10 @@ int main()
             }
         }
 
-        // Mark the selected vertex as included in the MST.
+      
         visited[u] = true;
 
-        // Update key and parent values of adjacent unvisited vertices.
+      
         for (int v = 0; v < V; v++)
         {
             if (graph[u][v] != 0 &&
@@ -65,7 +64,7 @@ int main()
         }
     }
 
-    // Display the Minimum Spanning Tree and its total cost.
+    
     int totalCost = 0;
 
     cout << "Minimum Cost Fire Alarm Network\n";
